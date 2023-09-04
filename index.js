@@ -2,6 +2,7 @@ const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
+const pauseBtn = document.querySelector(".pause-btn"); // Seleciona o botão de pausa
 
 let gameOver = false;
 let foodX, foodY;
@@ -10,6 +11,7 @@ let velocityX = 0, velocityY = 0;
 let snakeBody = [];
 let setIntervalId;
 let score = 0;
+let paused = false; // Adicionado variável para controlar se o jogo está pausado ou não
 
 // Obtém a pontuação máxima do armazenamento local
 
@@ -51,8 +53,15 @@ const changeDirection = e => {
 
 controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
 
+// Adicionado evento de clique ao botão de pausa
+pauseBtn.addEventListener("click", () => {
+    paused = !paused; // Alterna o valor da variável paused
+    pauseBtn.innerText = paused ? "Continuar" : "Pausar"; // Altera o texto do botão de acordo com o estado do jogo
+});
+
 const initGame = () => {
     if (gameOver) return handleGameOver();
+    if (paused) return; // Se o jogo estiver pausado, não executa o restante do código
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
 
     // Quando a cobra come a comida

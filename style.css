@@ -53,20 +53,19 @@ body{
 }
 
 .controls{
-    display: none;
-    justify-content: space-between;
+    display:none ;
+     justify-content :space-between ;
 }
 
 .controls i{
-    padding: 25px 0;
-    text-align: center;
-    font-size: 1.3rem;
-    color: #b8c6dc;
-    width: calc(100% / 4);
-    cursor: pointer;
-    border-right: 1px solid #171b26;
+   padding :25px 0 ;
+   text-align:center ;
+   font-size :1.3rem ;
+   color:#b8c6dc ;
+   width :calc(100% /4 );
+   cursor:pointer ;
+   border-right :1px solid #171b26 ;
 }
-
 
 /* Adicionado estilo para o botão de pausa */
 .pause-btn{
@@ -87,18 +86,19 @@ body{
      .wrapper{
          width :90vmin ;
          height :115vmin ;
-         .game-details{
-            font-size: 1rem;
-            padding: 15px 27px;
-        }
-    
-        .controls{
-            display: flex;
-        }
-    
-        .controls i{
-            padding: 15px 0;
-            font-size: 1rem;
-        }
-    }
+     }
+
+     .game-details{
+         font-size :1rem ;
+         padding :15px 27px ;
+     }
+
+     .controls{
+         display:flex ;
+     }
+
+     .controls i{
+         padding :15px 0 ;
+         font-size :1rem ;
+     }
 }
